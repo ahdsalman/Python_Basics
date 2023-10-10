@@ -165,3 +165,25 @@ class Domain(Office):
 y=Domain("Python","Web Development")
 y.std()
 y.stud()
+
+
+                # <---Abstraction--->
+
+from abc import ABC , abstractmethod
+
+class Myname(ABC):
+    def me(self):
+        pass
+
+class Iam(Myname):
+    def __init__(self,name):
+        self.name=name
+
+    def me(self):
+        return self.name
+
+x=Iam("Salman")
+print(x.me())
+
+
+

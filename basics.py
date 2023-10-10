@@ -41,7 +41,7 @@ print(c)
 print(tuple1[0]) #<---Possession Accessing--->
 
 del tuple1       #<---Deletion--->
-print(tuple1)
+print('Deleted')
 
 
 tu=(1,2,3,4,5,6,7) #<---Count of element--->
@@ -140,19 +140,58 @@ y=dir(tuple)
 
 print(y)
 
-                    # <---list comprehension--->
+# <---comprehensions--->
 
-liste1 = [2,3,4,5,6,7,8]
-evn = [x for x in liste1 if x % 2 == 0]
-print(evn)
+# (___List___)
 
-                    # <---lambda dunction--->
+l1=[1,2,3,4,5]
+new_list = [x for x in l1 if x % 2==0]
+print(new_list)
 
+# (___Dict___)
+
+d1=[("Salman",23),("Mufees",22),("Ameer",24),("Anshad",20)]
+new_d1={name:age for name,age in d1 if age % 2 ==0}
+print(new_d1)
+
+# (___Set___)
+
+s1=[1,2,2,3,4,4,5,6,6,7]
+new_s1={x for x in s1 if x % 2 !=0}
+print(new_s1)
+
+                    # <---lambda Function--->
+x = lambda a : a + 10
+print(x(5))
 num = [2,3,4,5]
-mlt = map(lambda x: x*2 , num)
-print(list(mlt))
 
-                        # <---Generator---?
+# (___lambda Function with comprehensions___)
+
+num = [2, 3, 4, 5]
+mlt = [(lambda x: x * 2)(x) for x in num]
+print(mlt)
+            # <---reduce()--->
+
+            
+from functools import reduce
+def redu(x,y):
+    return x*y
+nu=[1,2,3,4,5]
+red=reduce(redu,nu)
+print(red)
+
+
+                    # <---map()--->
+def square(x):
+    return x ** 2
+
+num = [1,2,3,4,5,6,7]
+
+square_num=map(square,num)
+res=list(square_num)
+print(res)
+
+                    # <---Generator---?
 
 def mystd():
     lis=["Salman"]
